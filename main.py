@@ -39,10 +39,11 @@ matches = [match for match in fixtures if match['RoundNumber'] == int(gameweek)]
 if matches:
     df = pd.DataFrame(matches, columns=['RoundNumber', 'DateUtc', 'Location', 'HomeTeam', 'AwayTeam', 'HomeTeamScore', 'AwayTeamScore'])
     df['DateUtc'] = pd.to_datetime(df['DateUtc']).dt.strftime('%d/%m/%Y %H:%M')
-    print(df)
+    # print(df)
 else:
     print(f"❌ No matches found for Gameweek {gameweek}. Please try a different gameweek.")
 
+df.to_csv("match.csv", index=False)
 
 # # ===========================================================
 # # 📊 2) Team Statistics: Wins, Losses, Points, etc.
@@ -466,7 +467,7 @@ plt.title('Top 10 Scorers of the Season')
 plt.xlabel('Goals Scored')
 plt.ylabel('Player')
 plt.tight_layout()
-plt.show()
+# plt.show()
 
 # ------------------------------------------
 # b. 📈 Line Chart for Team Performance Over the Season
@@ -489,7 +490,7 @@ plt.xlabel('Team')
 plt.xticks(rotation=45)
 plt.legend(title='Team', bbox_to_anchor=(1.05, 1), loc='upper left')  # Place legend outside plot
 plt.tight_layout()
-plt.show()
+# plt.show()
 # # ------------------------------------------
 # c. 📊 Heatmap for Venue-wise or Time-based Patterns (Goals Scored)
 # ------------------------------------------
@@ -511,7 +512,7 @@ plt.title("Home vs Away Goals (Venue-wise) - Heatmap")
 plt.xlabel("Venue (Home vs Away)")
 plt.ylabel("Team")
 plt.tight_layout()
-plt.show()
+# plt.show()
 
 # ------------------------------------------
 # Additional Heatmap for Goals Scored by Each Team per Gameweek
@@ -538,7 +539,7 @@ plt.title("Goals Scored by Each Team per Gameweek")
 plt.xlabel("Matchweek (RoundNumber)")
 plt.ylabel("Team")
 plt.tight_layout()
-plt.show()
+# plt.show()
 
 
 # ---------------------------------------------------------
