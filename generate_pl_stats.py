@@ -125,6 +125,4 @@ df_top_assists = pd.DataFrame(top_assists_data, columns=assist_columns)
 df_top_scorers.to_csv("top_scorers.csv", index=False)
 df_top_assists.to_csv("top_assists.csv", index=False)
 
-print("CSV files created: top_scorers.csv and top_assists.csv")
 
-x=pd.read_csv("C:\\Users\\hp\\Desktop\\tt\\cleaned_team_stats.csv")
