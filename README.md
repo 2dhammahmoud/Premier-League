@@ -1,132 +1,37 @@
-﻿# Premier-League
- 📊 Premier League Stats Dashboard - Streamlit Application
-Overview
-This is a Premier League Stats Dashboard built using Streamlit. The dashboard provides detailed information about the current season's Premier League fixtures, results, team stats, and player statistics. It also includes some analysis and visualizations to better understand the trends of the current football season. The data is scraped from various sources and then cleaned, analyzed, and presented in an easy-to-understand format.
+# 📊 Premier League Stats Dashboard
 
-Features
-Match Results: Displays scores, dates, venues, and team statistics for each match in a specified gameweek.
+![Premier League](https://github.com/2dhammahmoud/Premier-League/blob/main/download.jpg?raw=true)
+*Premier League Season: 2023-2024*
 
-Team Statistics: Displays the current league standings, including wins, losses, goals scored, and more.
+## 📝 Project Overview
+This is a comprehensive **Premier League Stats Dashboard** built using **Streamlit**. It provides a real-time (seasonal) analysis of football data, including match results, team standings, and player performance. 
 
-Player Statistics: Displays top players based on goals, assists, and appearances.
+> **Note:** This project was primarily developed and optimized for the **2023-2024 Season**. Since it relies on live web scraping from the official Premier League website, some components may require updates to align with changes in the website's HTML structure for newer seasons.
 
-Fixtures: Shows upcoming fixtures and kickoff times.
+---
 
-Analysis: Provides key insights like top scorers, teams with the best offense/defense, and match statistics.
+## ✨ Key Features
+* **Live Match Results:** Detailed scores, venues, and dates for specific gameweeks.
+* **Dynamic League Table:** Real-time standings including Wins, Losses, Draws, and GD.
+* **Advanced Player Stats:** Tracking top scorers, assist leaders, and appearances.
+* **Visual Analysis:** Interactive Bar charts, Scatter plots, and Heatmaps (Home/Away performance).
+* **Robust Data Pipeline:** Automated scraping using **Selenium** and **BeautifulSoup4**.
+* **Database Management:** Integration with **MongoDB** for persistent storage and avoiding data duplication.
 
-Visualizations: Generates bar charts, line charts, and heatmaps based on match and player data.
+---
 
-MongoDB Integration: Stores match data, team stats, and player stats in a MongoDB database to avoid duplicate data and keep everything up to date.
+## 🛠 Tech Stack
+* **Frontend:** [Streamlit](https://streamlit.io/) (Interactive Web Dashboard)
+* **Data Scraping:** [Selenium](https://www.selenium.dev/) & [BeautifulSoup4](https://www.crummy.com/software/BeautifulSoup/)
+* **Data Processing:** [Pandas](https://pandas.pydata.org/) & [NumPy](https://numpy.org/)
+* **Database:** [MongoDB](https://www.mongodb.com/)
+* **Visualization:** [Seaborn](https://seaborn.pydata.org/) & [Matplotlib](https://matplotlib.org/)
 
-Requirements
-Before running the app, make sure you have the following installed:
+---
 
-Python 3.x
+## 🚀 Installation & Setup
 
-Required Libraries:
-
-Streamlit
-
-Pandas
-
-Requests
-
-BeautifulSoup4
-
-Selenium
-
-Seaborn
-
-Matplotlib
-
-Pymongo
-
-You can install the required libraries by running:
-
-bash
-Copy
-Edit
-pip install streamlit pandas requests beautifulsoup4 selenium seaborn matplotlib pymongo
-Web Driver for Selenium:
-
-Make sure you have the appropriate WebDriver for Selenium (e.g., ChromeDriver for Google Chrome).
-
-Place the WebDriver in the same directory as the Python script or add it to your system's PATH.
-
-File Structure
-bash
-Copy
-Edit
-project-directory/
-│
-├── streamlit_app.py         # Main Streamlit application
-├── premier_league_fixtures.csv  # Fixtures data (CSV)
-├── top_scorers.csv          # Player goals data (CSV)
-├── top_assists.csv          # Player assists data (CSV)
-├── player_combined_stats.csv   # Combined player stats (CSV)
-├── cleaned_team_stats.csv    # Cleaned team statistics (CSV)
-├── cleaned_match_results.csv  # Cleaned match results (CSV)
-└── cleaned_fixtures.csv     # Cleaned fixtures data (CSV)
-How It Works
-1. Match Results Extraction and Cleaning
-The match data is fetched using an API (JSON data for the Premier League). The data includes match details such as home and away teams, scores, dates, and locations. The match results are cleaned and formatted before being displayed.
-
-2. Team Stats Extraction and Cleaning
-Team statistics, including number of games played, wins, losses, goals for and against, are scraped from the Premier League's official website. The data is then cleaned and saved into a CSV file.
-
-3. Player Stats Extraction and Cleaning
-Player statistics for goals, assists, and appearances are scraped from the official Premier League website. These statistics are cleaned, merged, and stored in a combined file.
-
-4. Fixtures Extraction
-Upcoming fixtures are scraped, and the data is cleaned and saved into a CSV file. A FixtureID is created to avoid duplicates in the database.
-
-5. Analysis and Visualization
-Key match and player statistics are calculated, including:
-
-Top scorers, most assists, and players with the most appearances.
-
-Team performance analysis, including the best attacking team and the team with the strongest defense.
-
-Weekly goal trends.
-
-Visualizations are created using matplotlib and seaborn to display:
-
-Top Scorers (Bar chart)
-
-Team Performance (Scatter plot)
-
-Home vs Away Goals (Heatmap)
-
-Goals Scored by Team per Gameweek (Heatmap)
-
-6. Database Integration with MongoDB
-The cleaned data (matches, teams, players, fixtures) is inserted into a MongoDB database to allow for future updates and avoid duplicate entries. The MongoDB server should be running locally.
-
-How to Run
-Download the WebDriver (e.g., ChromeDriver) and ensure it's in the same directory as your Python script, or add it to your system’s PATH.
-
-Run the Streamlit Application: Open a terminal and run the following command:
-
-bash
-Copy
-Edit
-streamlit run streamlit_app.py
-This will launch the Streamlit app in your browser. You can interact with the app to explore match data, team stats, and player statistics.
-
-MongoDB Setup: Ensure that you have a running MongoDB instance on your local machine. You can download it from MongoDB.
-
-Data Sources
-Premier League API: For match results and statistics.
-
-Premier League Official Website: For team stats and player stats.
-
-MongoDB: For storing and managing data.
-
-Future Enhancements
-Add support for multiple leagues (e.g., La Liga, Bundesliga).
-
-Implement a feature to compare player stats.
-
-Provide more granular insights (e.g., player performance analysis per match).
-
-Allow users to filter matches and teams based on specific conditions (e.g., top-performing teams, top scorers).
+### 1. Clone the repository
+```bash
+git clone [https://github.com/2dhammahmoud/Premier-League.git](https://github.com/2dhammahmoud/Premier-League.git)
+cd Premier-League
